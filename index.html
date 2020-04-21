@@ -410,17 +410,6 @@
                     </section>
 
                     <section>
-                        <h3>Contents of <code>_version.py</code>:</h3>
-                        <br>
-                        <pre><code data-trim class="python">
-                            __version_info__ = (0, 4, 2, 'a1')
-                            __version__ = '.'.join(map(str, __version_info__[:3]))
-                            if len(__version_info__) == 4:
-                                __version__ += __version_info__[-1]
-                        </code></pre>
-                    </section>
-
-                    <section>
                         <h3>Contents of <code>setup.cfg</code>:</h3>
                         <br>
                         <pre><code data-trim class="text">
@@ -434,6 +423,66 @@
                             addopts = -vv --cov=./
                             filterwarnings =
                                 ignore::ResourceWarning
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Contents of <code>MANIFEST.in:</code>:</h3>
+                        <br>
+                        <pre><code data-trim class="markdown">
+                            include LICENSE
+                            include AUTHORS.md
+                            include CHANGELOG.md
+                            include CONTRIBUTING.md
+                            include compphys/tests/*.txt
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <ol>
+                        <li class="fragment">
+                            Install the package from source: <code>python setup.py install</code>
+                        </li>
+                        <li class="fragment">
+                            Create a source-only ZIP file: <code>python setup.py sdist</code>
+                        </li>
+                        <li class="fragment">
+                            Create an <a href="https://pypi.org/account/register/">account on PyPI</a>
+                        </li>
+                        <li class="fragment">
+                            Upload: <code>twine upload dist/*</code>
+                        </li>
+                        <li class="fragment">
+                            Subsequent versions: increase the version number (tip: use Semantic Versioning)
+                        </li>
+                        <ol>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <p>
+                            <a href="https://semver.org">Semantic Versioning</a>: Given a version number MAJOR.MINOR.PATCH, increment the:
+                        </p>
+                        <ul class="fragment">
+                            <li>MAJOR version when you make incompatible API changes,</li>
+                            <li>MINOR version when you add functionality in a backwards-compatible manner, and</li>
+                            <li>PATCH version when you make backwards-compatible bug fixes.</li>
+                        </ul>
+                        <p class="fragment">
+                            To start: set initial development release at 0.1.0 and increment minor version for subsequent releases.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>Contents of <code>_version.py</code>:</h3>
+                        <br>
+                        <pre><code data-trim class="python">
+                            __version_info__ = (0, 4, 2, 'a1')
+                            __version__ = '.'.join(map(str, __version_info__[:3]))
+                            if len(__version_info__) == 4:
+                                __version__ += __version_info__[-1]
                         </code></pre>
                     </section>
 
@@ -532,51 +581,6 @@
                             [0.0.2]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...v0.0.2
                         </code></pre>
                         </div>
-                    </section>
-                    <section>
-                        <h3>Contents of <code>MANIFEST.in:</code>:</h3>
-                        <br>
-                        <pre><code data-trim class="markdown">
-                            include LICENSE
-                            include AUTHORS.md
-                            include CHANGELOG.md
-                            include CONTRIBUTING.md
-                            include compphys/tests/*.txt
-                        </code></pre>
-                    </section>
-
-
-                    <section>
-                        <ol>
-                        <li class="fragment">
-                            Install the package from source: <code>python setup.py install</code>
-                        </li>
-                        <li class="fragment">
-                            Create a source-only ZIP file: <code>python setup.py sdist</code>
-                        </li>
-                        <li class="fragment">
-                            Create an <a href="https://pypi.org/account/register/">account on PyPI</a>
-                        </li>
-                        <li class="fragment">
-                            Upload: <code>twine upload dist/*</code>
-                        </li>
-                        <li class="fragment">
-                            Subsequent versions: increase the version number (tip: use Semantic Versioning)
-                        </li>
-                        <ol>
-                    </section>
-                    <section>
-                        <p>
-                            <a href="https://semver.org">Semantic Versioning</a>: Given a version number MAJOR.MINOR.PATCH, increment the:
-                        </p>
-                        <ul class="fragment">
-                            <li>MAJOR version when you make incompatible API changes,</li>
-                            <li>MINOR version when you add functionality in a backwards-compatible manner, and</li>
-                            <li>PATCH version when you make backwards-compatible bug fixes.</li>
-                        </ul>
-                        <p class="fragment">
-                            To start: set initial development release at 0.1.0 and increment minor version for subsequent releases.
-                        </p>
                     </section>
                 </section>
 
